@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        // Objects - 2 in JS
+
+/*        // 1st thing we can do
+
+        var str = new String();
+         document.write(typeof(str));
+*/
+        var car = {
+            car_brand : "Tesla",
+            car_model : "Model 1",
+            car_price : 35000 + "USD",
+
+            teslaAutoPilot : function() {
+                document.write("<h1> This Car has Auto Pilot Mode </h1>");
+            }
+        }
+            car.fuel = "Electric";
+            delete car.car_model;
+            document.write("<h1>" + car.fuel + "</h1>");
+            document.write("<h1>" + car.car_model + "</h1>");
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

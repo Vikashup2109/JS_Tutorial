@@ -1,0 +1,67 @@
+<!-- We will learn 4 methods in this section which are as follows:-
+    1) text();  // This method is used to access the text written in directed tag.
+    2) html();  // This method is similar to text(); method. This also is used to access the text but it will show all the code written in directed tag.
+    3) attr();  // This method is used to find the value of any attribute of directed tag.
+    4) css();   // This method is used to find the value of any property of css of directed tag.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Manipulation-jQuery</title>
+    <style>
+        .mydivs {
+            border: solid 1px green;
+            width: 30%;
+            margin-top: 2px;
+        }
+        #p1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery DOM-Manipulation</h1>
+    <button id="btn1">Text method</button>
+    <button id="btn2">html method</button>
+    <button id="btn3">attr method</button>
+    <button id="btn4">css method</button>
+    <button id="btn5">set method</button>
+    <button id="btn6">get method</button>
+    <div class="mydivs" id="first-div">
+        <p id="p1" class="para1">I am learning <b>DOM manipulation</b>  using jQuery</p>
+    </div>
+</body>
+<script src="./JS/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $("#btn1").click(function(){
+            $("#p1").text('from Telusko Learning on Youtube');
+            // $("#p1").text();   // This will access the same text written in p tag            
+        });
+        $("#btn2").click(function(){
+            var txt = $("#p1").html();
+            alert(txt);
+        });
+        $("#btn3").click(function(){
+            var txt = $("#first-div").attr("class");
+            alert(txt);
+        });
+        $("#btn4").click(function(){
+            var txt = $("#p1").css("font-family");
+            alert(txt);
+        });
+        $("#btn5").click(function(){
+            $("#p1").attr("class","para2");
+            // alert(txt);
+        });
+        $("#btn6").click(function(){
+            var txt = $(".para2").attr("class");
+            alert(txt);
+        });
+        
+
+    });
+</script>
+</html>

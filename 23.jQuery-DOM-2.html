@@ -1,0 +1,61 @@
+
+<!-- 
+    We will learn 6 methods in this section which are as follows:-
+    1) append("----");  //  This will write the content at the end os selected tag.
+    2) after ("----");  //  This will erite the content after the selected tag.
+    3) prepend("----"); //  This will write the content in the biginning of selected tag.
+    4) before("-----"); //  This will write the content just before the selected tag.
+    5) remove();        //  This will remove the whole tag selected irrespective of content written in selected tag.
+    6) empty();         //  This will remove all the content written in selected tag.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Manipulation</title>
+    <style>
+        .mydivs {
+            border: solid 2px darkgreen;
+            width: 30%;
+            margin-top: 4px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery DOM Manipulation Part-2</h1>
+    <button id="btn1">Append</button>
+    <button id="btn2">After</button>
+    <button id="btn3">Prepend</button>
+    <button id="btn4">Before</button>
+    <button id="btn5">Remove</button>
+    <button id="btn6">Empty</button><br><br>
+    <div class="mydivs">
+        <p class="mypara">This is first paragraph in first division</p>
+    </div>
+</body>
+<script src="./JS/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#btn1").click(function(){
+            $(".mydivs").append("This is second paragraph in first division <br>");
+        });
+        $("#btn2").click(function(){
+            $(".mydivs").after("This is second paragraph in first division <br>");
+        });
+        $("#btn3").click(function(){
+            $(".mydivs").prepend("This is second paragraph in first division <br>");
+        });
+        $("#btn4").click(function(){
+            $(".mydivs").before("This is second paragraph in first division <br>");
+        });
+        $("#btn5").click(function(){
+            $(".mydivs").remove();
+        });
+        $("#btn6").click(function(){
+            $("body").empty();
+        });
+    });
+</script>
+</html>

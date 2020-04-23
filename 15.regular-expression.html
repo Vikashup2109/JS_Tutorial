@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regular Expression</title>
+    <script>
+        function validate() {
+            var username = document.getElementById("uname").value;
+            // var regex = /E00/;
+            // or 
+            var regex = /[a-g]E00/; // here first character should be between a to g.
+            // or
+            // regex = new RegExp("E00","i");
+
+            //to exclude a character, ^ sign is used.
+            // Eg. var regex = /[^1-5]abc/;
+
+            if(regex.test(username)) {
+                alert("Valid Username");
+            } else {
+                alert("Invalid Username, Username must contain 'E00'");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="uname" placeholder="Username"><br><br>
+        <input type="submit" onclick="validate()">
+    </form>
+</body>
+</html>

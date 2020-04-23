@@ -1,0 +1,51 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Fade In Fade Out</title>
+        <script type="text/javascript">
+        var intervalID = 0;
+        var opacity =0;
+        function fade_out() {
+            intervalID = setInterval(hide,50);
+        }
+        function hide()
+        {
+            var img = document.getElementById("msg");
+            opacity = Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+            if (opacity > 0) 
+            {
+                opacity -= 0.1;
+                img.style.opacity = opacity;
+            } 
+            else 
+            {
+                clearInterval(intervalID);
+            }
+        }
+        function fade_in() {
+            intervalID = setInterval(show,50);
+        }
+        function show() {
+            var img = document.getElementById("msg");
+            // opacity = Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+            if (opacity < 1) 
+            {
+                opacity += 0.1;
+                img.style.opacity = opacity;
+            } 
+            else 
+            {
+                clearInterval(intervalID);
+            }
+        }
+
+
+        
+        </script>
+    </head>
+    <body>
+        <button onclick="fade_out()">Fade Out</button><br>
+        <img src="./imgs/about-me.jpg" alt="Image" width="200px" id="msg"><br>
+        <button onclick="fade_in()">Fade In</button>
+    </body>
+    </html>

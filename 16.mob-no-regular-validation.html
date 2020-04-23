@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mobile No. Validation</title>
+    <script>
+        function validate() {
+            var mob_no = document.getElementById("mob-no").value;
+            var regex = /^[6-9]\d{9}$/;
+            if(regex.test(mob_no))
+            {
+               var lable_catch = document.getElementById("lable");
+               lable_catch.innerHTML = "Valid";
+               lable_catch.style.visibility = "visible";
+               lable_catch.style.color = "green"; 
+            }
+            else 
+            {
+                var lable_catch = document.getElementById("lable");
+               lable_catch.innerHTML = "Invalid";
+               lable_catch.style.visibility = "visible";
+               lable_catch.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="mob-no" placeholder="Mobile Number">
+    <br>
+    <label id="lable" style="visibility: hidden;;";">Invalid</label>
+    <br>
+    <button onclick="validate()">Click here</button>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E-mail Validation</title>
+    <script>
+        function validate() {
+            var email = document.getElementById("email").value;
+            var regex = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,8})(.[a-z]{2,5})?(.[a-z]{2,5})$/;
+            // here ? makes optional just before the ? .
+            if(regex.test(email))
+            {
+               var lable_catch = document.getElementById("lable");
+               lable_catch.innerHTML = "Valid";
+               lable_catch.style.visibility = "visible";
+               lable_catch.style.color = "green"; 
+            }
+            else 
+            {
+                var lable_catch = document.getElementById("lable");
+               lable_catch.innerHTML = "Invalid";
+               lable_catch.style.visibility = "visible";
+               lable_catch.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="email" placeholder="E-mail">
+    <br>
+    <label id="lable" style="visibility: hidden;;";">Invalid</label>
+    <br>
+    <button onclick="validate()">Click here</button>
+</body>
+</html>

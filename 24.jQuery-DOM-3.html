@@ -1,0 +1,49 @@
+
+<!-- 
+    We will learn 6 methods in this section which are as follows:-
+    1) addClass("---");         //  This will add one or more classes to selected element.
+    2) removeClass("---");      //  This will remove one or more class(es) of selected element.
+    3) toggleClass("---");      //  Toggle between adding/removing class of seleccted element.
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Manipulation</title>
+     <style>
+         .mydivs {
+             border: solid 2px darkgreen;
+             width: 30%;
+             margin-top: 4px;
+             padding: 10px;
+         }
+     </style>
+ </head>
+ <body>
+     <h1>jQuery DOM Manipulation Part-2</h1>
+     <button id="btn1">Add Class</button>
+     <button id="btn2">Remove Class</button>
+     <button id="btn3">Toggle Class</button>
+     <div class="mydivs">
+         <p class="mypara">This is first paragraph in first division</p>
+     </div>
+ </body>
+ <script src="./JS/jquery.js"></script>
+ <script>
+     $(document).ready(function() {
+         $("#btn1").click(function(){
+             $(".mydivs").addClass("yourdivs done");
+             alert($(".mydivs").attr("class"));
+         });
+         $("#btn2").click(function(){
+            $(".mydivs").removeClass("yourdivs");
+            alert($(".mydivs").attr("class"));
+         });
+         $("#btn3").click(function(){
+             $(".mydivs").toggleClass("yourdivsss");
+             alert($(".mydivs").attr("class"));
+         })
+     });
+ </script>
+ </html>

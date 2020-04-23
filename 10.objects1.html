@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        // Objects in JS
+/*
+        // First (1st) Way to Creating Objects 
+        var car = {
+            car_brand : "Tesla",
+            car_model : "Model 1",
+            car_price : 35000 + "USD",
+
+            teslaAutoPilot : function() {
+                document.write("<h1> This Car has Auto Pilot Mode </h1>");
+            }
+
+            // teslaAutoPilot : function() {
+            //     return "<h1> This Car has Auto Pilot Mode </h1>";
+            // }
+        }
+        car.teslaAutoPilot();
+
+        // document.write(car.teslaAutoPilot());
+*/
+        
+        // Second (2nt) Way to Creating Objects
+        
+        function car(brand, model, price) {
+            this.car_brand = brand;
+            this.car_model = model;
+            this.car_price = price;
+            
+            this.TeslaAutoPilot = function () {
+                document.write("<h2> This model have Auto Pilot Mode </h2>");
+            }
+        }
+
+        var c1 = new car("Tesla", "Model-1", "35000-USD");
+        var c2 = new car("Honda", "Amaze", "2000-USD");
+
+        c1.TeslaAutoPilot();
+        c2.TeslaAutoPilot();
+        document.write(c1.car_brand);
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

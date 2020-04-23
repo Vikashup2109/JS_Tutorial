@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        
+    // DOM manipulating using getElementById Method
+
+        function buttonClick() {
+            alert("Hey, What's up. How are you doing in Lockdown.");
+            document.getElementById("heading1")
+            .innerHTML = "Yo Yo Vikki Upadhyay";
+        }
+
+        // Taking Input from user
+
+        function buttonClick1() {
+            var str = document.getElementById("text-test").value;
+            alert(" Value in Text box is: "+str);
+        }
+
+            // Program to find username and password are same or not;
+        function buttonClick2() {
+            var user_name = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if(user_name == password) {
+                alert("Both are same");
+            } else {
+                alert("Credentials not matched.");
+            }
+        }
+
+        // Taking input in Radio Button from User;
+        function fn1() {
+            var rd1 = document.getElementById("rd1");
+            var rd2 = document.getElementById("rd2");
+
+            if(rd1.checked==true)
+                alert("Subject Selected is: " + rd1.value);
+            else if(rd2.checked==true)
+                alert("Subject Selected is: "+rd2.value);
+            else
+                alert("No Subject Selected");
+        }
+
+        // Taking input in Select box (Drop-down menu) from User;
+        function fn2()  {
+            var select = document.getElementById("select-box");
+            alert("You are fan of "+ select.options[select.selectedIndex].value);
+        }
+    //  End of DOM manipulating using getElementById Method
+    //  DOM manipulating using getElementById Method
+
+        function func1() {
+            var para = document.getElementsByTagName("p");
+            para[0].style.fontSize = "xx-large";
+            para[1].style.fontSize = "20px";
+            para[1].style.fontWeight = "bold";
+            para[2].style.color = "red";
+            para[3].style.backgroundColor = "green";
+        }
+
+    </script>
+</head>
+<body>
+
+    <!-- Section Related to getElementById Method -->
+
+        <button onclick="buttonClick()">Cickme</button>
+        <h1 id="heading1">Click Here to do something</h1>
+        <br><br>
+
+        <input id="text-test" placeholder="Enter Anything">
+        <br><button id="btn1" onclick="buttonClick1()">Click me</button>
+        <br><br><br>
+
+        <input type="text" id="username" placeholder="Enter Username">
+        <br>
+        <input type="password" id="password" placeholder="Enter Password">
+        <br><button id="btn2" onclick="buttonClick2()">Check</button>
+        <br><br><br>
+
+        <!-- Radio Button -->
+
+        <input name="grp1" type="radio" value="Methamatics" id="rd1">Mathematics</input><br>
+        <input name="grp1" type="radio" value="DSA" id="rd2">Data Structure and Algorithms</input><br>
+        <button onclick="fn1()" id="btn3">Click me</button>
+        <br><br><br>
+    
+        <!--SELECT Dropdown Menu -->
+
+        <select id="select-box">
+            <option value="Vikash Upadhyay">Vikash Upadhyay</option>
+            <option value="Pavnesh Chaturvedi">Pavnesh Chaturvedi</option>
+            <option value="Apoorv Jai Dev ">Apporv Jai Dev</option>
+            <option value="Prashant Shukla">Prashant Shukla</option>
+        </select><br>
+        <button onclick="fn2()">Click me</button><br><br><br><br><br>
+    <!--End of Section Related to getElementById Method -->
+
+    <!-- Section Related to getElementByTagName Method -->
+
+        <p>Vikash Updhyay</p>
+        <p>Electronics and Communication Engineering</p>
+        <p>IIIT Kota</p>
+        <p>Jaipur Rajasthan</p>
+        <button onclick="func1()">Click Me</button>
+    <!-- NOTE: similar concept can be applied to with getElementByClassName Method -->
+</body>
+</html>

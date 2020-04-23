@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Events in jQuery</title>
+    <style>
+        .mydivs {
+            border: solid 2px red; padding: 3px;
+            width: 28%;
+        }
+        div.animation {
+            height: 50px;
+            width: 50px;
+            background-color: burlywood;
+            padding: 10px;
+            position: absolute;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="mydivs">
+        <p>Hi. I am Vikash Upadhyay</p>
+        <p>Hi. I am Vikash Upadhyay</p>
+        <p>Hi. I am Vikash Upadhyay</p>
+    </div><br>
+    <button id="btn1">Click me to Fade In/Out</button>
+    <button id="btn2">Double Click me to Fade In/Out</button><br><br>
+    <div class="mydivs">
+        <p>This is the first paragraph in second division.</p>
+    </div><br>
+    <button id="btn3">Click me</button>
+    <button id="btn4">Click me (HOVER)</button>
+    <div id="third-div" class="mydivs">
+        <ul>
+            <li>Events are very interesting portion</li>
+            <li>Events are very interesting portion</li>
+            <li>Events are very interesting portion</li>
+            <li>Events are very interesting portion</li>
+        </ul>
+    </div>
+    <br><br>
+    <button id="btn5">Animation</button><br><br>
+    <div class="animation">Vikash</div>
+</body>
+<script src="./JS/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#btn1").click(function() {
+            $(".mydivs p").fadeToggle(1500);
+        });
+
+        $("#btn2").dblclick(function() {
+            $(".mydivs p:first").fadeToggle(1500);
+        });
+
+        $("#btn3").mouseenter(fn3);
+        $("#btn3").mouseleave(fn4);
+        $("#btn4").hover(fn3,fn4);
+
+        function fn3() {
+            $("#third-div").fadeOut();
+        }
+        function fn4() {
+            $("#third-div").fadeIn();
+        }
+    
+
+/* Ther are some more effects in jQuery :-
+    -->   fadeIn / fadeOut / fadeToggle
+    -->   hide / show / Toggle
+    -->   slideup / slidedown / slideToggle
+    -->   and many more....
+*/
+        $("#btn5").click(function(){
+            $(".animation").animate({
+                left: '250px',
+                width: '120px',
+                height: '120px',
+                opacity: '1',
+                padding: '20px'
+            },2000);
+        });
+        // callback function and chaining
+            /*
+                $("#btn4").click(function() {
+                    $("#mydivs").slideToggle(2000,printmsg)                 // here printmsg is a call-back function
+                });
+                function printmsg() {
+                    alert("All is working well");
+                }
+            */
+            /*      Chaining
+                $("btn4").click(function() {
+                    $("mydivs").slideToggle(2000).fadeToggle(2000).slideup(2400).slidedown(2300);
+                })
+                    // here all of above mention will get executed one by one.
+            */
+    });
+</script>
+</html>

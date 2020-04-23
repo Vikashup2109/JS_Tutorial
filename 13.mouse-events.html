@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+        function setNewImg() {
+            document.getElementById("img").src = "imgs/vikash-photo.jpg"
+        }
+        function setOldImg() {
+            document.getElementById("img").src = "imgs/about-me.jpg"
+        }
+
+    </script>
+</head>
+<body>
+    <img id="img" onmouseover="setNewImg()" 
+    onmouseout="setOldImg()" src="imgs/about-me.jpg" 
+    alt="Profile Image" width = "300">
+</body>
+</html>

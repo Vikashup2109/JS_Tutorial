@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation</title>
+    <script>
+
+        // Basics Functionality in Form
+/*
+        function form_validation() {
+            var username = document.getElementById("user-name");
+            var password = document.getElementById("password");
+
+            if(username.value.trim() == "" || password.value.trim() ==  "") {
+                alert("Username or Password can not be left blank");
+                return false;
+            } else {
+                return true;
+            }
+        }
+*/
+        // Advanced Functionality in Form
+
+        function form_validation() {
+            var username = document.getElementById("user-name");
+            var password = document.getElementById("password");
+
+            if(username.value.trim()  == "") {
+                // alert("Can't Left Empty. Please Enter Username.");
+                username.style.border = "solid 1px red";
+                document.getElementById("invalid").style.visibility = "visible";
+                return false;
+            }
+            else if(password.value.trim() == "") {
+                alert("Can't Left Empty. Please Enter Password.");
+                return false;
+            }
+            else if(password.value.trim().length<= 5) {
+                alert("Pssword must be greater than 5 Letters.");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <form onsubmit="return form_validation()" action="13.mouse-events.html">
+        <input type="text" id="user-name" placeholder="Username" required>
+        <label id="invalid" style="color: red; visibility: hidden;">Invalid</label>
+        <br><br>
+        <input type="password" id="password" placeholder="Password" required><br><br>
+        <button type="submit">Click Me</button>
+    </form>
+</body>
+</html>

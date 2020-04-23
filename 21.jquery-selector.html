@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery Selectors</title>
+</head>
+<body>
+    <h1 class="heading1" id="heading-1">Vikash Upadhyay</h1> <br> 
+    <h1 class="heading1">Vikash Upadhyay</h1> <br>
+    <h1>Vikash Upadhyay</h1> <br>
+    <button onclick="fn1()">Fade in/out all</button>
+    <button onclick="fn2()">Fade in/out only 1st</button>
+    <button onclick="fn3()">Fade in/out 1st two</button>
+</body>
+<script src="./JS/jquery.js"></script>
+<script>
+    function fn1() {
+        $("h1").fadeToggle();
+    }
+    function fn2() {
+        $("#heading-1").fadeToggle();
+    }
+    function fn3() {
+        $(".heading1").fadeToggle();
+    }
+</script>
+</html>
